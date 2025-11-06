@@ -15,10 +15,10 @@ class AnimalFactory extends Factory
     public function definition(): array
     {
         return [
-            'name'     => fake()->unique()->firstName(),
-            'species'  => fake()->randomElement(['dog','cat','rabbit']),
-            'status'   => fake()->randomElement(['available','hold','pending','adopted']),
-            'priority' => fake()->numberBetween(1, 5),
+            'name'     => $this->faker->unique()->firstName(),
+            'species'  => $this->faker->randomElement(['dog','cat','rabbit']),
+            'status'   => $this->faker->randomElement(['available','hold','pending','adopted']),
+            'priority' => $this->faker->numberBetween(1, 5),
         ];
     }
 }
