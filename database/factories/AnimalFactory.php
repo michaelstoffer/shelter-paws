@@ -5,6 +5,9 @@ namespace Database\Factories;
 use App\Models\Animal;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends Factory<Animal>
+ */
 class AnimalFactory extends Factory
 {
     protected $model = Animal::class;
