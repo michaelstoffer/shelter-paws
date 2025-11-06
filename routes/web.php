@@ -9,14 +9,18 @@ use Inertia\Inertia;
 Route::get('/', fn () => redirect()->route('animals.index'))->middleware('auth');
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/animals', Index::class)->name('animals.index');
+
     Route::get('/adoption-queue', [AdoptionQueueController::class, 'index'])
         ->name('adoption.queue');
-
-    Route::get('/animals', Index::class)->name('animals.index');
 
     // Update just the priority for an animal
     Route::patch('/animals/{animal}/priority', [AdoptionQueueController::class, 'updatePriority'])
         ->name('animals.priority.update');
+
+    // Bulk reset (optionally filter by status: available|hold|pending|adopted)
+    Route::patch('/adoption-queue/reset-priorities', [AdoptionQueueController::class, 'resetPriorities'])
+        ->name('adoption.queue.reset');
 });
 
 Route::get('/hello-inertia', function () {
