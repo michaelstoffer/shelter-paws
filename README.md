@@ -30,10 +30,15 @@ It simulates the **Intake → Care → Adoption** workflow and highlights how to
 ## 💡 Features
 
 ✅ **Animal Intake & Management** — Livewire CRUD with filters and pagination
+
 ✅ **Adoption Queue** — Inertia/Vue interactive list with priority bumping
+
 ✅ **Hold Board (Kanban)** — Vue 3 drag‑and‑drop columns for Available → Hold → Pending
+
 ✅ **Humane UX** — clean language, accessibility, and responsive Tailwind design
+
 ✅ **API-first mindset** — JSON endpoints for animals and queue
+
 ✅ **Seeded demo data** — prepopulated animals, applications, and users
 
 ---
